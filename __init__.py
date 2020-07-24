@@ -1,4 +1,6 @@
-from flask import Flask
+import datetime
+import shelve
+from flask import Flask, request, jsonify, g
 from flask_restful import Resource, Api, reqparse
 
 app = Flask(__name__)
@@ -35,5 +37,11 @@ class Mood(Resource):
         shelf = get_db()
         shelf[args['identifier']] = args
 
+ def login():
+    auth = request.authorization
+    if auth and auth.password == "password":
+        token = [{"user" : auth.username, "exp" : datetime.datetime.utcnow() + datetime.timedelta(minutes=30)}]
+        return jsonify({"token" : token})
+    return 0
 
 api.add_resource(Mood, '/moods')

@@ -3,9 +3,11 @@
 
 My Notes:
 Used Flask documentation and tutorial on Python 3.
-Basic api created from what knowledge I learned from the internet. 
+Basic api created from what knowledge I learned from the internet, since I haven't reached this level in my university. 
 Using Flask, the api use the mood class to create the mood endpoint and creates the get and post methods.
 The login purposes have been created using the Flask request import utilizing the authentication methods.
+Unable to correctly approach streak problem and count not develope solution. 
+I think moving forward to larger scale would require a sql server database and a more generalized api that the one I attempted to create.
 
 Requirements:
 

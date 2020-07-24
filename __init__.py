@@ -21,10 +21,11 @@ class Mood(Resource):
 
         obj = []
 
-        for key in keys:
-            obj.append(shelf[key])
+        if login() != 0:
+            for key in keys:
+                obj.append(shelf[key])
 
-        return {'message': 'Success', 'data': obj}, 200
+            return {'message': 'Success', 'data': obj}, 200
 
     def post(self):
         parser = reqparse.RequestParser()
